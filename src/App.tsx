@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import { UserList } from './components/UserList';
-import { UserDetail } from './components/UserDetail';
+import { useState } from "react";
+import { UserList } from "./components/UserList";
+import { UserDetail } from "./components/UserDetail";
+import { CreateUserForm } from "./components/CreateUserForm";
 
 function App() {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
 
   return (
-    <div style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
+    <div style={{ padding: "20px", maxWidth: "800px", margin: "0 auto" }}>
       <h1>Users Manager</h1>
+      <CreateUserForm />
       <UserList
         onSelectUser={setSelectedUserId}
         selectedUserId={selectedUserId}
