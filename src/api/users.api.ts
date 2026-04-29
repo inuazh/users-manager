@@ -19,3 +19,8 @@ export const getUsers = async (): Promise<User[]> => {
   const { data } = await api.get<User[]>('/users');
   return data;
 };
+
+export const getUser = async (id: number): Promise<User> => {
+  const { data } = await api.get<User>(`/users/${id}`);
+  return data;
+};
