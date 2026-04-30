@@ -35,3 +35,7 @@ export const createUser = async (dto: CreateUserDto): Promise<User> => {
   const { data } = await api.post<User>('/users', dto);
   return data;
 };
+
+export const deleteUser = async (id: number): Promise<void> => {
+  await api.delete(`/users/${id}`)
+}
