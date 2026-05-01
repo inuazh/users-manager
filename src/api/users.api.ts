@@ -53,3 +53,10 @@ export const updateUser = async (
   const { data } = await api.put<User>(`/users/${id}`, dto);
   return data;
 };
+
+export const searchUsers = async (query: string): Promise<User[]> => {
+  const { data } = await api.get<User[]>('/users');
+  return data.filter((u) =>
+    u.name.toLowerCase().includes(query.toLowerCase())
+  );
+};
