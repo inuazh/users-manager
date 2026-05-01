@@ -2,6 +2,7 @@ import { useState } from "react";
 import { UserList } from "./components/UserList";
 import { UserDetail } from "./components/UserDetail";
 import { CreateUserForm } from "./components/CreateUserForm";
+import { EditUserForm } from "./components/EditUserForm";
 
 function App() {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
@@ -15,6 +16,7 @@ function App() {
         selectedUserId={selectedUserId}
       />
       <UserDetail userId={selectedUserId} />
+      {selectedUserId && <EditUserForm key={selectedUserId} userId={selectedUserId} />}
     </div>
   );
 }
