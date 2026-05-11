@@ -4,6 +4,7 @@ import { UserDetail } from "./components/UserDetail";
 import { CreateUserForm } from "./components/CreateUserForm";
 import { EditUserForm } from "./components/EditUserForm";
 import { SearchBar } from "./components/SearchBar";
+import { InfiniteUsers } from "./components/InfiniteUsers";
 
 function App() {
   const [selectedUserId, setSelectedUserId] = useState<number | null>(null);
@@ -19,6 +20,7 @@ function App() {
       />
       <UserDetail userId={selectedUserId} />
       {selectedUserId && <EditUserForm key={selectedUserId} userId={selectedUserId} />}
+      <InfiniteUsers/>
     </div>
   );
 }

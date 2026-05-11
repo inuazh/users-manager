@@ -60,3 +60,13 @@ export const searchUsers = async (query: string): Promise<User[]> => {
     u.name.toLowerCase().includes(query.toLowerCase())
   );
 };
+
+export const getUsersPaginated = async (
+  page: number,
+  limit = 3,
+): Promise<User[]> => {
+  const { data } = await api.get<User[]>('/users', {
+    params: { _page: page, _limit: limit },
+  });
+  return data;
+};
